@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Jesel Cura – Customer Success & E‑commerce Specialist</title>
+    <!-- Include React and Babel from CDNs -->
+    <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    <style>
+      body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        color: #1F2937;
+        line-height: 1.6;
+      }
+      header {
+        background-color: #1E3A66;
+        color: #ffffff;
+        padding: 20px 40px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+      header img {
+        height: 60px;
+      }
+      nav ul {
+        display: flex;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+      nav li {
+        margin-right: 20px;
+      }
+      nav a {
+        color: #ffffff;
+        text-decoration: none;
+        font-weight: bold;
+      }
+      nav a:hover {
+        text-decoration: underline;
+      }
+      .hero {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: space-between;
+        padding: 80px 40px;
+        background-color: #F7F7FA;
+      }
+      .hero-content {
+        flex: 1 1 50%;
+        max-width: 50%;
+      }
+      .hero-content h1 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+        color: #1E3A66;
+      }
+      .hero-content p {
+        margin-bottom: 20px;
+        font-size: 1.1rem;
+      }
+      .hero-content button {
+        padding: 12px 24px;
+        background-color: #27AE60;
+        color: #ffffff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 1rem;
+      }
+      .hero-content button:hover {
+        background-color: #219653;
+      }
+      .hero img {
+        flex: 1 1 45%;
+        max-width: 45%;
+        height: auto;
+        border-radius: 8px;
+      }
+      section {
+        padding: 60px 40px;
+      }
+      .section-heading {
+        font-size: 2rem;
+        margin-bottom: 20px;
+        color: #1E3A66;
+      }
+      .service-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+      }
+      .service-item {
+        flex: 1 1 calc(33.333% - 20px);
+        background-color: #ffffff;
+        border: 1px solid #e5e7eb;
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+      }
+      .service-item h3 {
+        margin-top: 0;
+        color: #1E3A66;
+      }
+      .case-studies, .faqs {
+        background-color: #F7F7FA;
+      }
+      .case-studies ul {
+        list-style: none;
+        padding-left: 20px;
+      }
+      .case-studies li {
+        margin-bottom: 10px;
+      }
+      ol {
+        padding-left: 20px;
+      }
+      .contact {
+        background-color: #1E3A66;
+        color: #ffffff;
+      }
+      .contact-form {
+        max-width: 600px;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+      }
+      .contact-form input,
+      .contact-form textarea {
+        width: 100%;
+        margin-bottom: 10px;
+        padding: 10px;
+        border-radius: 4px;
+        border: none;
+      }
+      .contact-form button {
+        background-color: #27AE60;
+        color: #ffffff;
+        padding: 12px 24px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 1rem;
+      }
+      .contact-form button:hover {
+        background-color: #219653;
+      }
+      @media (max-width: 768px) {
+        .hero {
+          flex-direction: column;
+        }
+        .hero-content,
+        .hero img {
+          max-width: 100%;
+          flex: 1 1 100%;
+        }
+        .service-item {
+          flex: 1 1 100%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="text/babel">
+      const App = () => {
+        const scrollToContact = () => {
+          const contactSection = document.getElementById('contact');
+          if (contactSection) {
+            contactSection.scrollIntoView({ behavior: 'smooth' });
+          }
+        };
+        return (
+          <>
+            <header>
+              <img src="./logo.jpg" alt="Jesel Cura logo" />
+              <nav>
+                <ul>
+                  <li><a href="#about">About</a></li>
+                  <li><a href="#services">Services</a></li>
+                  <li><a href="#case">Case Studies</a></li>
+                  <li><a href="#process">Process</a></li>
+                  <li><a href="#faqs">FAQs</a></li>
+                  <li><a href="#contact">Contact</a></li>
+                </ul>
+              </nav>
+            </header>
+            <section className="hero">
+              <div className="hero-content">
+                <h1>Expert Customer Success Manager &amp; E‑commerce / Real Estate Specialist</h1>
+                <p>Building strong, long‑lasting relationships that drive mutual success.</p>
+                <button onClick={scrollToContact}>Start Your Success Journey</button>
+              </div>
+              <img src="./hero.png" alt="Hero image" />
+            </section>
+            <section id="about">
+              <h2 className="section-heading">About Me</h2>
+              <p>Hello! I&#39;m Jess, a dedicated Customer Success Manager who is passionate about building strong, long‑lasting relationships that drive mutual success. With nearly eight years of experience in customer support and service across various industries, I specialize in ensuring that clients receive consistent value and support.</p>
+              <p>My mission is to empower every client by providing exceptional support and tailored solutions that enhance their overall experience and drive their success. My vision is to create thriving partnerships based on trust, transparency and open communication, where clients feel valued and understood.</p>
+              <p>My approach focuses on proactive account management and customer onboarding, allowing me to engage with clients regularly and identify opportunities for optimization and growth.</p>
+            </section>
+            <section id="services">
+              <h2 className="section-heading">Services</h2>
+              <div className="service-list">
+                <div className="service-item">
+                  <h3>E‑commerce Store Management</h3>
+                  <p>Helping businesses optimize their online presence and drive sales through effective product listings, inventory management, order processing, and customer communications.</p>
+                </div>
+                <div className="service-item">
+                  <h3>Customer Success Management</h3>
+                  <p>Ensuring clients achieve their goals and receive maximum value from products via proactive account management, regular check‑ins, and tailored onboarding.</p>
+                </div>
+                <div className="service-item">
+                  <h3>Executive Assistance &amp; Administration</h3>
+                  <p>Providing high‑level administrative support to streamline operations, manage calendars, coordinate communications, and organize documentation.</p>
+                </div>
+                <div className="service-item">
+                  <h3>Success Strategy &amp; Consulting</h3>
+                  <p>Developing tailored strategies that foster client satisfaction and growth through data‑driven insights and customized plans.</p>
+                </div>
+                <div className="service-item">
+                  <h3>Real Estate Property Management</h3>
+                  <p>Overseeing property operations and enhancing tenant experiences by coordinating maintenance, managing communications, and ensuring compliance.</p>
+                </div>
+              </div>
+            </section>
+            <section id="case" className="case-studies">
+              <h2 className="section-heading">Case Studies &amp; Highlights</h2>
+              <ul>
+                <li><strong>40% Increase in Product Usage:</strong> Addressed customer concerns and provided a tailored training plan to increase product usage by 40%.</li>
+                <li><strong>Optimized E‑commerce Operations:</strong> Helped clients streamline online stores, improve product listings, and enhance customer communications to drive sales.</li>
+                <li><strong>Tailored Success Strategies:</strong> Developed customized strategies to foster client satisfaction and growth.</li>
+                <li><strong>Consistently High Ratings:</strong> Rated 5.0/5.0 by clients for roles such as Customer Success Manager and Operations Generalist.</li>
+              </ul>
+            </section>
+            <section id="process">
+              <h2 className="section-heading">How It Works</h2>
+              <ol>
+                <li><strong>Discovery &amp; Goal Setting:</strong> Understand your goals and challenges.</li>
+                <li><strong>Assessment &amp; Planning:</strong> Review processes and design a custom action plan.</li>
+                <li><strong>Implementation:</strong> Execute improvements while maintaining clear communication.</li>
+                <li><strong>Measurement &amp; Optimization:</strong> Monitor results and iterate for sustained success.</li>
+              </ol>
+            </section>
+            <section id="faqs" className="faqs">
+              <h2 className="section-heading">FAQs</h2>
+              <h4>What industries do you specialize in?</h4>
+              <p>E‑commerce, technology, and real estate sectors, leveraging nearly eight years of customer service experience.</p>
+              <h4>How do you ensure client success?</h4>
+              <p>Through proactive account management and tailored onboarding that engages clients regularly and identifies opportunities for growth.</p>
+              <h4>What services do you offer?</h4>
+              <p>E‑commerce store management, customer success management, executive assistance, success strategy consulting, and real estate property management.</p>
+              <h4>How do I get started?</h4>
+              <p>Schedule an initial consultation to discuss your needs and determine how I can help your business thrive.</p>
+            </section>
+            <section id="contact" className="contact">
+              <h2 className="section-heading">Get in Touch</h2>
+              <p>Tell me about your goals and how I can help your business grow. Fill out the form below and I&#39;ll get back to you soon!</p>
+              <form className="contact-form" onSubmit={(e) => e.preventDefault()}>
+                <input type="text" placeholder="Your Name" required />
+                <input type="email" placeholder="Your Email" required />
+                <input type="text" placeholder="Company" />
+                <input type="text" placeholder="Website" />
+                <textarea placeholder="What do you need help with?" rows="4"></textarea>
+                <button type="submit">Send Message</button>
+              </form>
+            </section>
+            <footer style={{ textAlign: 'center', padding: '20px', backgroundColor: '#0F2545', color: '#ffffff' }}>
+              © {new Date().getFullYear()} Jesel Cura. All rights reserved.
+            </footer>
+          </>
+        );
+      };
+      ReactDOM.render(<App />, document.getElementById('root'));
+    </script>
+  </body>
+</html>
